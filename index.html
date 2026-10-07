@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LRA.form · Wabi-Sabi, tavolini in marmo di Laura Cabbia</title>
+<meta name="description" content="LRA.form è il brand di design di Laura Cabbia. Wabi-Sabi: due tavolini in marmo con piano ottagonale e gambe tagliate a water-jet, personalizzabili per marmo e misure.">
+<meta property="og:title" content="LRA.form · Wabi-Sabi">
+<meta property="og:description" content="Due tavolini in marmo nati da un dialogo tra opposti. Design di Laura Cabbia.">
+<meta property="og:image" content="https://www.lraform.it/img/coppia.jpg">
+<meta property="og:url" content="https://www.lraform.it/">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<style>
+@font-face{font-family:"Bodoni Moda";src:url(fonts/bodoni-moda-latin-400-normal.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:"Bodoni Moda";src:url(fonts/bodoni-moda-latin-500-normal.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap;}
+@font-face{font-family:"Bodoni Moda";src:url(fonts/bodoni-moda-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap;}
+@font-face{font-family:"Manrope";src:url(fonts/manrope-latin-400-normal.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:"Manrope";src:url(fonts/manrope-latin-500-normal.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap;}
+@font-face{font-family:"Manrope";src:url(fonts/manrope-latin-600-normal.woff2) format("woff2");font-weight:600;font-style:normal;font-display:swap;}
+@font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono-latin-400-normal.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:"Shippori Mincho";src:url(fonts/shippori-mincho-49-400-normal.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+4F98;}
+@font-face{font-family:"Shippori Mincho";src:url(fonts/shippori-mincho-82-400-normal.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+5BC2;}
+/* Layout: galleria da monografia. Fondo che prosegue il fondale fotografico, titolo Bodoni, struttura dialettica Tesi / Antitesi / Sintesi, fascia scura per la tecnica con bordo frastagliato */
+:root{
+  --bg:#E7EAEB;            /* il grigio del fondale di posa */
+  --paper:#F3F5F6;
+  --fg:#1A1F23;            /* ardesia */
+  --muted:#5B666E;
+  --line:#C9D0D3;
+  --accent:#6E5A3E;        /* bronzo ossidato */
+  --band-bg:#171B1E;
+  --band-fg:#E7EAEC;
+  --band-muted:#97A2A9;
+  --band-line:#30383D;
+  --band-accent:#C4A97D;
+  --display:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+  --body:"Manrope","Helvetica Neue",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --kanji:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --gutter:clamp(16px,4vw,56px);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#131719;--paper:#1A1F22;--fg:#E4E8EA;--muted:#99A4AB;--line:#2C3439;--accent:#C4A97D;
+  --band-bg:#0C0F11;--band-fg:#E4E8EA;--band-muted:#8F9AA1;--band-line:#252C31;--band-accent:#C4A97D;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#131719;--paper:#1A1F22;--fg:#E4E8EA;--muted:#99A4AB;--line:#2C3439;--accent:#C4A97D;
+  --band-bg:#0C0F11;--band-fg:#E4E8EA;--band-muted:#8F9AA1;--band-line:#252C31;--band-accent:#C4A97D;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:1280px;margin:0 auto;padding-inline:var(--gutter)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+img{display:block;max-width:100%}
+p{margin:0}
+figure{margin:0}
+
+.label{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.label b{color:var(--accent);font-weight:400}
+.zoom{cursor:zoom-in}
+
+/* Header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 84%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px;border-bottom:1px solid var(--line)}
+.logo{font-family:var(--display);font-size:24px;letter-spacing:.04em;text-decoration:none;line-height:1}
+.brand{display:block;line-height:0}
+.brand-mark{display:block;height:clamp(40px,4.2vw,56px);aspect-ratio:590/299;background:var(--fg);-webkit-mask:url(img/logo-lra.png) center/contain no-repeat;mask:url(img/logo-lra.png) center/contain no-repeat}
+.bar{padding-block:12px}
+.logo i{color:var(--accent);font-style:normal}
+nav{display:flex;gap:clamp(14px,2.6vw,34px)}
+nav a{font-size:11.5px;text-transform:uppercase;letter-spacing:.16em;text-decoration:none;color:var(--muted);transition:color .2s}
+nav a:hover{color:var(--fg)}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(24px,5vw,72px);padding-block:clamp(32px,5vw,64px) clamp(56px,8vw,110px);align-items:stretch}
+.hero-l{display:flex;flex-direction:column;justify-content:space-between;gap:36px;position:relative}
+h1{font-family:var(--display);font-weight:400;line-height:.84;letter-spacing:-.04em;margin:0;font-size:clamp(78px,13.5vw,212px)}
+h1 span{display:block}
+h1 .w2{font-style:italic;color:var(--accent);padding-left:clamp(28px,7vw,120px)}
+.kanji{font-family:var(--kanji);font-size:clamp(30px,3.6vw,48px);writing-mode:vertical-rl;letter-spacing:.24em;line-height:1;position:absolute;right:0;top:56px}
+.kanji small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;margin-top:14px;color:var(--muted)}
+.lead{font-family:var(--display);font-size:clamp(22px,2.2vw,29px);line-height:1.32;max-width:27ch;text-wrap:pretty}
+.meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 20px}
+.meta div{border-top:1px solid var(--fg);padding-top:10px}
+.meta dd{margin:4px 0 0;font-size:14.5px}
+.hero-img img{width:100%;height:100%;max-height:900px;aspect-ratio:2/3;object-fit:cover;object-position:50% 62%}
+.hero-img figcaption{margin-top:12px;display:flex;justify-content:space-between;gap:12px}
+
+/* Manifesto */
+.manifesto{padding-block:clamp(64px,10vw,140px);border-top:1px solid var(--line)}
+.manifesto p{font-family:var(--display);font-size:clamp(34px,5.4vw,78px);line-height:1.06;letter-spacing:-.025em;max-width:20ch;text-wrap:balance}
+.manifesto em{color:var(--accent)}
+.manifesto p.def{font-family:var(--body);font-size:clamp(17px,1.5vw,20px);line-height:1.6;letter-spacing:0;color:var(--muted);max-width:none;margin-top:clamp(28px,4vw,44px);padding-left:0;text-wrap:pretty}
+.manifesto .label{display:block;margin-bottom:28px}
+
+/* Dialettica */
+.dial{padding-block:0 clamp(80px,11vw,160px)}
+.dial-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(36px,5vw,64px)}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(42px,6.4vw,92px);line-height:.95;letter-spacing:-.03em;margin:14px 0 0;text-wrap:balance}
+h2 em{color:var(--accent)}
+.intro{max-width:46ch;color:var(--muted);font-size:17px}
+.triad{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.6vw,40px);align-items:start}
+.triad article:nth-child(2){margin-top:clamp(40px,9vw,140px)}
+.triad article:nth-child(3){margin-top:clamp(20px,4.5vw,70px)}
+.triad img{width:100%;aspect-ratio:2/3;object-fit:cover}
+.triad .t{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-block:16px 10px;border-bottom:1px solid var(--line)}
+.triad h3{font-family:var(--display);font-weight:400;font-size:clamp(26px,2.4vw,34px);margin:0;letter-spacing:-.01em}
+.triad h3 em{color:var(--accent)}
+.triad p{padding-top:12px;color:var(--muted);font-size:15.5px;max-width:40ch}
+
+/* Tecnica: fascia scura */
+.band{background:var(--band-bg);color:var(--band-fg);padding-block:clamp(90px,12vw,170px)}
+.band .label{color:var(--band-muted)}
+.band .label b{color:var(--band-accent)}
+.band h2 em{color:var(--band-accent)}
+.band .intro{color:var(--band-muted)}
+.torn{clip-path:var(--torn,none)}
+.jet{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,6vw,96px);align-items:start;margin-top:clamp(36px,5vw,64px)}
+.jet-imgs{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:12px}
+.jet-imgs .big{grid-row:span 2}
+.jet-imgs img{width:100%;height:100%;object-fit:cover}
+.jet-imgs .big img{aspect-ratio:2/3}
+.jet-imgs .sm img{aspect-ratio:4/5}
+.steps{list-style:none;margin:0;padding:0;display:grid}
+.steps li{display:grid;grid-template-columns:48px minmax(0,1fr);gap:14px;padding-block:22px;border-top:1px solid var(--band-line)}
+.steps li:last-child{border-bottom:1px solid var(--band-line)}
+.steps .n{font-family:var(--display);font-style:italic;font-size:30px;line-height:1;color:var(--band-accent)}
+.steps h3{font-family:var(--display);font-weight:500;font-size:22px;margin:0 0 4px}
+.steps p{color:var(--band-muted);font-size:15px}
+.quote{margin-top:32px;font-family:var(--display);font-style:italic;font-size:clamp(22px,2.2vw,28px);line-height:1.3;max-width:26ch}
+
+/* Materia */
+.materia{padding-block:clamp(80px,11vw,160px)}
+.mat-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,4fr) minmax(0,3fr);gap:clamp(12px,2vw,24px);align-items:end;margin-top:clamp(36px,5vw,64px)}
+.mat-grid img{width:100%;aspect-ratio:2/3;object-fit:cover}
+.mat-grid figure:nth-child(2) img{aspect-ratio:3/4}
+.mat-txt{display:grid;gap:18px;align-self:start;padding-top:8px}
+.mat-txt p{color:var(--muted);font-size:15.5px}
+.mat-txt .big{font-family:var(--display);font-size:clamp(24px,2.4vw,32px);line-height:1.25;color:var(--fg)}
+
+/* Biografia */
+.bio-sec{background:var(--paper);padding-block:clamp(80px,11vw,160px)}
+.bio{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,6vw,96px);align-items:start;margin-top:clamp(36px,5vw,64px)}
+.monogram{position:relative;overflow:hidden}
+.monogram img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 40%}
+.monogram span{position:absolute;left:18px;bottom:6px;font-family:var(--display);font-size:clamp(70px,9vw,130px);line-height:1;letter-spacing:-.04em;color:#F3F5F6;mix-blend-mode:difference}
+.bio-txt{display:grid;gap:22px}
+.bio-txt .first{font-family:var(--body);font-size:16px;line-height:1.7}
+.bio-txt p{max-width:60ch}
+.values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:14px}
+.values div{border-top:1px solid var(--fg);padding-top:14px}
+.values h3{font-family:var(--display);font-weight:500;font-size:20px;margin:0 0 6px}
+.values p{font-size:14.5px;color:var(--muted)}
+.sign{font-family:var(--display);font-style:italic;font-size:26px;color:var(--accent)}
+
+/* Scheda + contatti */
+.info{padding-block:clamp(80px,11vw,160px)}
+.info-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,7vw,120px);align-items:end}
+.info-grid .rows{margin-top:0}
+dl{margin:0}
+.rows{margin-top:28px}
+.rows div{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:16px;padding-block:15px;border-top:1px solid var(--line)}
+.rows div:last-child{border-bottom:1px solid var(--line)}
+.rows dd{margin:0}
+.contacts a{text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .2s,color .2s;user-select:text}
+.contacts a:hover{color:var(--accent);border-color:var(--accent)}
+.contacts dd{overflow-wrap:anywhere}
+.todo{font-family:var(--mono);font-size:13px;color:var(--muted)}
+h2.sm{font-size:clamp(36px,4.4vw,60px)}
+
+footer{background:var(--band-bg);color:var(--band-muted)}
+footer .wrap{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;padding-block:30px;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em}
+footer .logo{color:var(--band-fg);font-size:20px}
+
+/* Personalizza */
+.pers{padding-block:clamp(80px,11vw,160px);border-top:1px solid var(--line)}
+.cfg{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,4vw,64px);align-items:start}
+/* Anteprima */
+.preview{position:sticky;top:calc(env(safe-area-inset-top,0px) + 90px);background:var(--paper);padding:clamp(16px,2.4vw,28px);display:grid;gap:16px}
+.pv-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.stage{position:relative}
+#personalizza svg{display:block;width:100%;height:auto}
+.dim line,.dim path{stroke:var(--muted);stroke-width:1}
+.dim text{fill:var(--fg);font-family:var(--mono);font-size:15px}
+.ground{stroke:var(--line);stroke-width:1}
+.pv-bottom{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:16px;align-items:center}
+.topview svg{max-width:220px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:flex;align-items:center;gap:8px;border:1px solid var(--line);padding:6px 10px 6px 6px;font-size:13px}
+.chip i{width:22px;height:22px;display:block;background-size:cover}
+.note{font-size:12.5px;color:var(--muted)}
+
+/* Controlli */
+.controls{display:grid;gap:0;grid-template-columns:minmax(0,1fr);min-width:0}
+.step,.sizes,.size-card,.summary,.preview{grid-template-columns:minmax(0,1fr);min-width:0}
+.seg button{white-space:normal;line-height:1.25;min-width:0}
+.step-h{flex-wrap:wrap;min-width:0}
+.seg{min-width:0}
+.step{padding-block:24px;border-top:1px solid var(--line);display:grid;gap:14px}
+.step:last-child{border-bottom:1px solid var(--line)}
+.step-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.st-h{font-family:var(--display);font-weight:400;font-size:26px;margin:0;letter-spacing:-.01em}
+.cur{font-size:13px;color:var(--muted);text-align:right}
+
+.swatches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.sw{appearance:none;border:0;background:none;padding:0;cursor:pointer;text-align:left;color:inherit;font:inherit;display:grid;gap:6px}
+.sw .img{aspect-ratio:1;background-size:cover;background-position:center;outline:1px solid var(--line);outline-offset:-1px;transition:transform .2s}
+.sw:hover .img{transform:scale(1.03)}
+.sw[aria-pressed="true"] .img{outline:2px solid var(--sel);outline-offset:3px}
+.sw span{font-size:12.5px;line-height:1.3}
+.sw[aria-pressed="true"] span{font-weight:600}
+.swatches[aria-disabled="true"]{opacity:.35;pointer-events:none}
+
+.toggle{display:flex;align-items:center;gap:10px;font-size:14.5px;cursor:pointer}
+.toggle input{width:18px;height:18px;accent-color:var(--fg)}
+
+.seg{display:flex;border:1px solid var(--line)}
+.seg button{flex:1;appearance:none;border:0;background:transparent;color:var(--muted);font:500 13px/1 var(--body);padding:12px 8px;cursor:pointer;letter-spacing:.02em}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+
+.sizes{display:grid;gap:18px}
+.size-card{display:grid;gap:10px}
+.size-card[hidden]{display:none}
+.size-card h3{font-family:var(--body);font-weight:600;font-size:14px;margin:0}
+.range{display:grid;grid-template-columns:110px minmax(0,1fr) 64px;align-items:center;gap:12px}
+.range label{font-size:13px;color:var(--muted)}
+.range output{font-family:var(--mono);font-size:13px;text-align:right;font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;accent-color:var(--fg)}
+
+.summary{background:var(--fg);color:var(--bg);padding:clamp(20px,3vw,32px);display:grid;gap:16px;margin-top:28px}
+.summary .st-h{color:var(--bg)}
+.summary .label{color:color-mix(in srgb,var(--bg) 65%,transparent)}
+.sum-list{margin:0;display:grid}
+.sum-list div{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:12px;padding-block:9px;border-top:1px solid color-mix(in srgb,var(--bg) 22%,transparent);font-size:14px}
+.sum-list dd{margin:0}
+.btn{appearance:none;border:1px solid var(--bg);background:var(--bg);color:var(--fg);font:600 12px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;padding:14px 18px;cursor:pointer;justify-self:start}
+.btn:hover{background:transparent;color:var(--bg)}
+.contact-line{font-size:13.5px;color:color-mix(in srgb,var(--bg) 75%,transparent)}
+.contact-line span{color:var(--bg);user-select:all}
+#copyfb{width:100%;min-height:120px;font:13px/1.5 var(--mono);background:transparent;color:var(--bg);border:1px solid color-mix(in srgb,var(--bg) 30%,transparent);padding:10px}
+
+
+@media (max-width:960px){
+  .cfg{grid-template-columns:minmax(0,1fr)}
+  .preview{position:relative;top:auto}
+}
+@media (max-width:520px){
+  .swatches{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .pv-bottom{grid-template-columns:minmax(0,1fr)}
+  .range{grid-template-columns:90px minmax(0,1fr) 56px}
+}
+/* Lightbox */
+.lb{position:fixed;inset:0;z-index:50;background:color-mix(in srgb,var(--band-bg) 94%,transparent);display:grid;grid-template-rows:auto minmax(0,1fr) auto;padding:calc(env(safe-area-inset-top,0px) + 14px) 16px calc(env(safe-area-inset-bottom,0px) + 16px);color:var(--band-fg)}
+.lb[hidden]{display:none}
+.lb-top{display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--band-muted)}
+.lb img{max-width:100%;max-height:100%;object-fit:contain;margin:auto;align-self:center}
+.lb-stage{display:grid;min-height:0;padding-block:12px}
+.lb-nav{display:flex;justify-content:center;gap:12px}
+.lb button{background:transparent;color:var(--band-fg);border:1px solid var(--band-line);font:500 12px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;padding:12px 18px;cursor:pointer}
+.lb button:hover{border-color:var(--band-accent);color:var(--band-accent)}
+
+/* Movimento */
+@media (prefers-reduced-motion: no-preference){
+  h1 .w1{animation:rise 1.2s cubic-bezier(.2,.7,.2,1) both}
+  h1 .w2{animation:rise 1.2s .12s cubic-bezier(.2,.7,.2,1) both}
+  .hero-img img{animation:settle 1.8s cubic-bezier(.2,.7,.2,1) both}
+  .zoom img,.zoom{transition:filter .4s}
+  .zoom:hover img{filter:brightness(1.04) contrast(1.04)}
+  @keyframes rise{from{transform:translateY(24px)}to{transform:none}}
+  @keyframes settle{from{transform:scale(1.03)}to{transform:none}}
+}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero,.jet,.bio,.info-grid{grid-template-columns:minmax(0,1fr)}
+  .hero-img{order:-1}
+  .hero-img img{aspect-ratio:4/5;max-height:none}
+  .kanji{top:0}
+  .mat-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .mat-txt{grid-column:1/-1;order:-1}
+  .values{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:640px){
+  .triad{grid-template-columns:minmax(0,1fr)}
+  .triad article:nth-child(n){margin-top:0}
+  .triad img{aspect-ratio:4/5}
+  .meta{grid-template-columns:minmax(0,1fr)}
+  nav{gap:12px}
+  nav a[href="#bio"]{display:none}
+  nav a{font-size:10.5px;letter-spacing:.12em}
+  .brand-mark{height:36px}
+}
+</style>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="LRA.form, torna all'inizio"><span class="brand-mark" role="img" aria-label="Logo LRA.form"></span></a>
+    <nav aria-label="Sezioni">
+      <a href="#dialettica">Opera</a>
+      <a href="#bio">Biografia</a>
+      <a href="#personalizza">Personalizza</a>
+      <a href="#info">Contatti</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="wrap hero">
+    <div class="hero-l">
+      <span class="label">LRA.form <b>/</b> Collezione n.1</span>
+      <div class="kanji" aria-hidden="true">侘寂<small>wabi · sabi</small></div>
+      <h1><span class="w1">Wabi</span><span class="w2">Sabi</span></h1>
+      <p class="lead">Due tavolini in marmo nati da un dialogo tra opposti: la geometria rigorosa ed esatta del piano incontra la frattura viva e irregolare delle gambe.</p>
+      <dl class="meta">
+        <div><dt class="label">Materia</dt><dd>Marmo Vesilys</dd></div>
+        <div><dt class="label">Taglio</dt><dd>Water-jet</dd></div>
+        <div><dt class="label">Set</dt><dd>Due pezzi</dd></div>
+      </dl>
+    </div>
+    <figure class="hero-img zoom" data-i="0">
+      <img src="img/coppia.jpg" alt="I due tavolini Wabi-Sabi su fondo grigio chiaro: piani ottagonali sottili e basi a croce in marmo Vesilys con bordi frastagliati">
+      <figcaption class="label"><span>Wabi-Sabi, la coppia</span><span>01 / 07</span></figcaption>
+    </figure>
+  </div>
+
+  <!-- MANIFESTO -->
+  <div class="manifesto">
+    <div class="wrap">
+      <span class="label"><b>—</b> Manifesto</span>
+      <p>Un ottagono perfetto, appoggiato su una pietra che non si lascia addomesticare. In mezzo, lo spazio del <em>wabi-sabi</em>.</p>
+      <p class="def">Wabi-sabi è la sensibilità giapponese che riconosce la bellezza in ciò che è incompiuto, impermanente, segnato dalla materia.</p>
+    </div>
+  </div>
+
+  <!-- DIALETTICA -->
+  <section id="dialettica" class="dial">
+    <div class="wrap">
+      <div class="dial-head">
+        <div><span class="label"><b>I.</b> L'opera</span><h2>Tre <em>momenti</em></h2></div>
+      </div>
+      <div class="triad">
+        <article>
+          <figure class="zoom" data-i="1"><img src="img/piano-spigolo.jpg" alt="Primo piano dello spigolo smussato del piano ottagonale levigato, con sotto le gambe a croce"></figure>
+          <div class="t"><h3>Il <em>piano</em></h3><span class="label">Tesi</span></div>
+          <p>Ottagono, spigolo smussato, superficie levigata. È la parte che obbedisce al disegno: misura, simmetria, controllo.</p>
+        </article>
+        <article>
+          <figure class="zoom" data-i="2"><img src="img/lastra-bordo.jpg" alt="Una lastra della base vista di taglio, con il bordo sfarfallato e le venature grigie in diagonale"></figure>
+          <div class="t"><h3>Le <em>gambe</em></h3><span class="label">Antitesi</span></div>
+          <p>Le lastre tagliate a water-jet. Il getto d'acqua apre la pietra e ne lascia il bordo sfarfallato, irregolare, mai uguale due volte.</p>
+        </article>
+        <article>
+          <figure class="zoom" data-i="3"><img src="img/tavolino-singolo.jpg" alt="Un tavolino Wabi-Sabi intero, frontale, con la base a croce e il piano sottile"></figure>
+          <div class="t"><h3>L'<em>oggetto</em></h3><span class="label">Sintesi</span></div>
+          <p>Liscio sopra, ruvido sotto. Le due nature si sostengono a vicenda e l'imperfezione diventa parte del progetto.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MATERIA -->
+  <section class="materia">
+    <div class="wrap">
+      <div class="dial-head">
+        <div><span class="label"><b>II.</b> La materia</span><h2>Ogni lastra, <em>un paesaggio</em></h2></div>
+      </div>
+      <div class="mat-grid">
+        <figure class="zoom" data-i="4"><img src="img/piani-dallalto.jpg" alt="I due piani ottagonali visti dall'alto, affiancati, con venature diverse"></figure>
+        <figure class="zoom" data-i="5"><img src="img/piani-gamba.jpg" alt="I due piani visti dall'alto con una gamba frastagliata che si intravede sotto"></figure>
+        <div class="mat-txt">
+          <p class="big">Stessa forma, due paesaggi diversi</p>
+          <p>Il marmo arriva con la sua storia scritta nelle venature. Per questo i due piani non sono mai gemelli: ogni coppia Wabi-Sabi è irripetibile, per disegno della pietra e per segno dell'acqua.</p>
+          <p class="label">Vista dall'alto, piani affiancati</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIOGRAFIA -->
+  <section id="bio" class="bio-sec">
+    <div class="wrap">
+      <div class="dial-head">
+        <div><span class="label"><b>III.</b> Biografia</span><h2>Laura <em>Cabbia</em></h2></div>
+        <p class="intro">Designer, fondatrice di LRA.form</p>
+      </div>
+      <div class="bio">
+        <figure class="monogram zoom" data-i="6">
+          <img src="img/bordo-sfarfallato.jpg" alt="Dettaglio del bordo sfarfallato di due lastre della base">
+          <span aria-hidden="true">LC</span>
+        </figure>
+        <div class="bio-txt">
+          <p>Laura Cabbia nasce nel veneziano nel 1996. Si forma in Design del Prodotto tra l'Università di Ferrara e quella di Firenze, sviluppando una sensibilità progettuale attenta e contemporanea. Matura esperienza in importanti studi di progettazione e aziende del settore del mobile nel trevigiano.</p>
+          <p>Oggi dà forma al sogno coltivato fin da bambina: LRA.form, il suo brand personale, espressione di un linguaggio progettuale raffinato, dinamico e in continua evoluzione.</p>
+          <div class="values">
+            <div><h3>Materia</h3><p>La pietra naturale, con le sue venature e i suoi difetti, guida la forma.</p></div>
+            <div><h3>Tecnica</h3><p>Strumenti contemporanei usati per far emergere il carattere del materiale.</p></div>
+            <div><h3>Tempo</h3><p>Oggetti pensati per durare e per cambiare con la luce e con gli anni.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONALIZZA -->
+  <section id="personalizza" class="pers">
+    <div class="wrap">
+      <div class="dial-head">
+        <div><span class="label"><b>IV.</b> Personalizza</span><h2>Il tuo <em>Wabi-Sabi</em></h2></div>
+        <p class="intro">Scegli il marmo del piano e della base, le misure e la finitura. Il disegno si aggiorna con i colori e le proporzioni che selezioni.</p>
+      </div>
+      <div class="cfg">
+    <!-- ANTEPRIMA -->
+    <section class="preview" aria-label="Anteprima">
+      <div class="pv-top">
+        <span class="label">Prospetto frontale</span>
+        <span class="label">Proporzioni reali</span>
+      </div>
+      <div class="stage"><svg id="front" viewBox="0 0 640 420" role="img" aria-label="Disegno frontale dei tavolini con le misure scelte"></svg></div>
+      <div class="pv-bottom">
+        <div class="topview">
+          <span class="label">Vista dall'alto</span>
+          <svg id="topv" viewBox="0 0 240 240" role="img" aria-label="Piano ottagonale visto dall'alto"></svg>
+        </div>
+        <div style="display:grid;gap:12px">
+          <div class="chips" id="chips"></div>
+          <p class="note">Campioni fotografati da lastre reali. Ogni lastra di marmo è unica: colori e venature del pezzo finale saranno diversi da quelli del disegno.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTROLLI -->
+    <section class="controls" aria-label="Opzioni">
+      <div class="step">
+        <div class="step-h"><h3 class="st-h">Composizione</h3><span class="cur" id="cur-comp"></span></div>
+        <div class="seg" id="comp">
+          <button type="button" data-v="set" aria-pressed="true">Set da due</button>
+          <button type="button" data-v="grande" aria-pressed="false">Solo grande</button>
+          <button type="button" data-v="piccolo" aria-pressed="false">Solo piccolo</button>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-h"><h3 class="st-h">Marmo del piano</h3><span class="cur" id="cur-top"></span></div>
+        <div class="swatches" id="sw-top"></div>
+      </div>
+
+      <div class="step">
+        <div class="step-h"><h3 class="st-h">Marmo della base</h3><span class="cur" id="cur-base"></span></div>
+        <label class="toggle"><input type="checkbox" id="same" checked> Stesso marmo del piano</label>
+        <div class="swatches" id="sw-base" aria-disabled="true"></div>
+      </div>
+
+      <div class="step">
+        <div class="step-h"><h3 class="st-h">Dimensioni</h3><span class="cur">cm, indicative</span></div>
+        <div class="sizes">
+          <div class="size-card" id="card-grande">
+            <h3>Tavolino grande</h3>
+            <div class="range"><label for="g-w">Larghezza piano</label><input type="range" id="g-w" min="40" max="80" step="5" value="55"><output for="g-w" id="o-g-w">55 cm</output></div>
+            <div class="range"><label for="g-h">Altezza</label><input type="range" id="g-h" min="35" max="60" step="5" value="50"><output for="g-h" id="o-g-h">50 cm</output></div>
+          </div>
+          <div class="size-card" id="card-piccolo">
+            <h3>Tavolino piccolo</h3>
+            <div class="range"><label for="p-w">Larghezza piano</label><input type="range" id="p-w" min="35" max="70" step="5" value="45"><output for="p-w" id="o-p-w">45 cm</output></div>
+            <div class="range"><label for="p-h">Altezza</label><input type="range" id="p-h" min="30" max="55" step="5" value="42"><output for="p-h" id="o-p-h">42 cm</output></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-h"><h3 class="st-h">Finitura del piano</h3><span class="cur" id="cur-fin"></span></div>
+        <div class="seg" id="fin">
+          <button type="button" data-v="Levigata" aria-pressed="true">Levigata</button>
+          <button type="button" data-v="Lucida" aria-pressed="false">Lucida</button>
+        </div>
+        <p class="note">La base resta sempre con il bordo grezzo del taglio water-jet.</p>
+      </div>
+
+      <div class="summary" aria-live="polite">
+        <span class="label">Riepilogo</span>
+        <h3 class="st-h">La tua configurazione</h3>
+        <dl class="sum-list" id="sum"></dl>
+        <button type="button" class="btn" id="copy">Copia riepilogo</button>
+        <textarea id="copyfb" hidden readonly aria-label="Riepilogo da copiare"></textarea>
+        <p class="contact-line">Incolla il riepilogo in un messaggio a <span>thetam@lraform.com</span> o al <span>340 080 0705</span> per ricevere un preventivo.</p>
+      </div>
+    </section>
+  </div>
+    </div>
+  </section>
+
+  <!-- CONTATTI -->
+  <section id="info" class="info">
+    <div class="wrap info-grid">
+      <div>
+        <span class="label"><b>V.</b> Contatti</span>
+        <h2 class="sm">Parliamo di <em>pietra</em></h2>
+        <p class="intro" style="margin-top:20px">Per disponibilità, prezzi, misure personalizzate o una versione in un altro marmo.</p>
+      </div>
+      <dl class="rows contacts">
+          <div><dt class="label">Designer</dt><dd>Laura Cabbia</dd></div>
+          <div><dt class="label">Telefono</dt><dd><a href="tel:+393400800705">340 080 0705</a></dd></div>
+          <div><dt class="label">Email</dt><dd><a href="mailto:thetam@lraform.com">thetam@lraform.com</a></dd></div>
+          <div><dt class="label">Instagram</dt><dd><a href="https://www.instagram.com/lra.fom/" target="_blank" rel="noopener">@lra.fom</a></dd></div>
+          <div><dt class="label">Sito</dt><dd><a href="https://www.lraform.it" target="_blank" rel="noopener">www.lraform.it</a></dd></div>
+        </dl>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span class="logo">LRA.form</span><span>Wabi-Sabi · marmo · water-jet</span><span>© 2026 · www.lraform.it</span></div>
+</footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Galleria foto">
+  <div class="lb-top"><span id="lb-count">01 / 07</span><button type="button" id="lb-close">Chiudi</button></div>
+  <div class="lb-stage"><img id="lb-img" src="" alt=""></div>
+  <div class="lb-nav"><button type="button" id="lb-prev">← Prec.</button><button type="button" id="lb-next">Succ. →</button></div>
+</div>
+
+<script>
+(function(){
+  /* Bordo frastagliato della fascia scura, come il taglio water-jet */
+  function rnd(seed){return function(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646;}}
+  function edge(r,n,y0,amp,top){const p=[];for(let i=0;i<=n;i++){const d=r()*amp+(r()<.18?r()*amp*1.6:0);p.push([(i/n)*100,top?y0+d:y0-d]);}return p;}
+  function torn(){
+    document.querySelectorAll(".torn").forEach((el,i)=>{
+      const r=rnd(97+i*131),h=el.getBoundingClientRect().height||1;
+      const amp=Math.min(18,Math.max(8,innerWidth*.012))/h*100;
+      const n=Math.round(Math.min(160,Math.max(60,innerWidth/9)));
+      const poly=edge(r,n,0,amp,true).concat(edge(r,n,100,amp,false).reverse()).map(p=>p[0].toFixed(2)+"% "+p[1].toFixed(2)+"%").join(",");
+      el.style.setProperty("--torn","polygon("+poly+")");
+    });
+  }
+  torn();let t;addEventListener("resize",()=>{clearTimeout(t);t=setTimeout(torn,150)});addEventListener("load",torn);
+
+  /* Galleria a schermo intero */
+  const figs=[...document.querySelectorAll("figure.zoom")].sort((a,b)=>a.dataset.i-b.dataset.i);
+  const lb=document.getElementById("lb"),img=document.getElementById("lb-img"),cnt=document.getElementById("lb-count");
+  let cur=0,last=null;
+  function show(i){cur=(i+figs.length)%figs.length;const s=figs[cur].querySelector("img");img.src=s.src;img.alt=s.alt;cnt.textContent=String(cur+1).padStart(2,"0")+" / "+String(figs.length).padStart(2,"0");}
+  function open(i){last=document.activeElement;show(i);lb.hidden=false;document.body.style.overflow="hidden";document.getElementById("lb-close").focus();}
+  function close(){lb.hidden=true;document.body.style.overflow="";if(last)last.focus();}
+  figs.forEach((f,i)=>{f.tabIndex=0;f.setAttribute("role","button");f.setAttribute("aria-label","Apri foto a schermo intero");
+    f.addEventListener("click",()=>open(i));
+    f.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open(i);}});});
+  document.getElementById("lb-close").onclick=close;
+  document.getElementById("lb-prev").onclick=()=>show(cur-1);
+  document.getElementById("lb-next").onclick=()=>show(cur+1);
+  lb.addEventListener("click",e=>{if(e.target===lb||e.target.classList.contains("lb-stage"))close();});
+  addEventListener("keydown",e=>{if(lb.hidden)return;if(e.key==="Escape")close();if(e.key==="ArrowRight")show(cur+1);if(e.key==="ArrowLeft")show(cur-1);});
+  let sx=null;lb.addEventListener("touchstart",e=>{sx=e.touches[0].clientX},{passive:true});
+  lb.addEventListener("touchend",e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50)show(cur+(dx<0?1:-1));sx=null;});
+})();
+</script>
+<script>
+(function(){
+/* Catalogo marmi: foto reali dei campioni */
+const MARBLES=[
+  {id:"vesilys",name:"Vesilys",note:"Il marmo della collezione"},
+  {id:"verde-alpi",name:"Verde Alpi"},
+  {id:"rosso-levanto",name:"Rosso Levanto"},
+  {id:"giallo-siena",name:"Giallo Siena"},
+  {id:"verde-guatemala",name:"Verde Guatemala"},
+  {id:"nero-portoro",name:"Nero Portoro"},
+  {id:"rosa-portogallo",name:"Rosa Portogallo"},
+  {id:"azul-macaubas",name:"Azul Macaubas"},
+  {id:"calacatta-viola",name:"Calacatta Viola"}
+];
+function rng(seed){let s=seed%2147483647;if(s<=0)s+=2147483646;return()=>((s=s*16807%2147483647)-1)/2147483646;}
+function texture(m){return "img/marmi/"+m.id+".jpg";}
+
+const st={comp:"set",top:"vesilys",base:"vesilys",same:true,fin:"Levigata",g:{w:55,h:50},p:{w:45,h:42}};
+const $=id=>document.getElementById(id);
+const M=id=>MARBLES.find(m=>m.id===id);
+
+/* Campioni */
+function buildSwatches(el,key){
+  el.innerHTML="";
+  MARBLES.forEach(m=>{
+    const b=document.createElement("button");b.type="button";b.className="sw";b.dataset.id=m.id;
+    b.setAttribute("aria-pressed",String(st[key]===m.id));b.title=m.note||m.name;
+    b.innerHTML=`<i class="img" style="background-image:url(${texture(m)})"></i><span>${m.name}</span>`;
+    b.onclick=()=>{st[key]=m.id;if(key==="top"&&st.same)st.base=m.id;render();};
+    el.appendChild(b);
+  });
+}
+function syncPressed(el,val){el.querySelectorAll("[data-id]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.id===val)));}
+
+/* Disegno */
+const NS="http://www.w3.org/2000/svg";
+function E(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;}
+function defs(svg){
+  const d=E("defs",{},svg);
+  const mk=(id,m,sc)=>{const p=E("pattern",{id,patternUnits:"userSpaceOnUse",width:640,height:640,patternTransform:`scale(${sc})`},d);E("image",{href:texture(m),width:640,height:640,preserveAspectRatio:"none"},p);};
+  const big=svg.id==="front";mk(svg.id+"-pt",M(st.top),big?.62:.4);mk(svg.id+"-pb",M(st.base),big?.5:.4);
+  const gl=E("linearGradient",{id:svg.id+"-gloss",x1:0,y1:0,x2:1,y2:1},d);
+  E("stop",{offset:0,"stop-color":"#fff","stop-opacity":st.fin==="Lucida"?.38:0},gl);
+  E("stop",{offset:.45,"stop-color":"#fff","stop-opacity":0},gl);
+  E("stop",{offset:1,"stop-color":"#fff","stop-opacity":st.fin==="Lucida"?.14:0},gl);
+  const sh=E("radialGradient",{id:svg.id+"-sh"},d);E("stop",{offset:0,"stop-color":"#000","stop-opacity":.22},sh);E("stop",{offset:1,"stop-color":"#000","stop-opacity":0},sh);
+}
+function jag(x,y0,y1,dir,r,amp){const pts=[];for(let y=y0;y<=y1;y+=4){pts.push([x+dir*(r()*amp),y]);}pts.push([x,y1]);return pts;}
+function table(svg,x0,gy,D,H,s,seed){
+  const r=rng(seed);const g=E("g",{},svg);
+  const th=2.4*s,tw=D*s,ty=gy-H*s;
+  const bw=tw*.74,bx=x0+(tw-bw)/2,by=ty+th,bh=gy-by;
+  E("ellipse",{cx:x0+tw/2,cy:gy,rx:bw*.62,ry:6,fill:`url(#${svg.id}-sh)`},g);
+  const panels=[[0,.31,.06],[.33,.47,.0],[.53,.67,.2],[.69,1,.1]];
+  panels.forEach(([a,b,shade])=>{
+    const L=bx+a*bw,R=bx+b*bw;
+    const left=jag(L,by,gy,1,r,2.2),right=jag(R,by,gy,-1,r,2.2).reverse();
+    const pts=left.concat(right).map(p=>p.join(",")).join(" ");
+    E("polygon",{points:pts,fill:`url(#${svg.id}-pb)`},g);
+    if(shade)E("polygon",{points:pts,fill:"#000","fill-opacity":shade},g);
+  });
+  const c=3;const top=[[x0+c,ty],[x0+tw-c,ty],[x0+tw,ty+c],[x0+tw,ty+th],[x0,ty+th],[x0,ty+c]].map(p=>p.join(",")).join(" ");
+  E("polygon",{points:top,fill:`url(#${svg.id}-pt)`},g);
+  E("polygon",{points:top,fill:`url(#${svg.id}-gloss)`},g);
+  E("line",{x1:x0+1,y1:ty+th,x2:x0+tw-1,y2:ty+th,stroke:"#000","stroke-opacity":.18},g);
+  // quote
+  const dm=E("g",{class:"dim"},svg);
+  const yq=ty-18;
+  E("line",{x1:x0,y1:yq,x2:x0+tw,y2:yq},dm);E("line",{x1:x0,y1:yq-5,x2:x0,y2:yq+5},dm);E("line",{x1:x0+tw,y1:yq-5,x2:x0+tw,y2:yq+5},dm);
+  E("text",{x:x0+tw/2,y:yq-7,"text-anchor":"middle"},dm).textContent=D+" cm";
+  const xq=x0+tw+12;
+  E("line",{x1:xq,y1:ty,x2:xq,y2:gy},dm);E("line",{x1:xq-5,y1:ty,x2:xq+5,y2:ty},dm);E("line",{x1:xq-5,y1:gy,x2:xq+5,y2:gy},dm);
+  const t=E("text",{x:xq+7,y:(ty+gy)/2+5},dm);t.textContent="h "+H;
+}
+function drawFront(){
+  const svg=$("front");svg.innerHTML="";defs(svg);
+  const items=[];if(st.comp!=="piccolo")items.push(["g",st.g]);if(st.comp!=="grande")items.push(["p",st.p]);
+  const W=640,gap=10,padX=24;
+  const totW=items.reduce((a,[,v])=>a+v.w,0)+gap*(items.length-1);
+  const maxH=Math.max(...items.map(([,v])=>v.h));
+  const s=Math.min((W-padX*2-70*items.length)/totW,9);
+  const gy=Math.round(maxH*s+64);svg.setAttribute("viewBox",`0 0 ${W} ${gy+22}`);
+  let x=(W-(totW*s+60*(items.length-1))-50)/2;
+  E("line",{x1:16,y1:gy,x2:W-16,y2:gy,class:"ground"},svg);
+  items.forEach(([k,v],i)=>{table(svg,x,gy,v.w,v.h,s,k==="g"?11:29);x+=v.w*s+gap*s+60;});
+}
+function drawTop(){
+  const svg=$("topv");svg.innerHTML="";defs(svg);
+  const v=st.comp==="piccolo"?st.p:st.g;
+  const R=100*(v.w/80)+10, cx=120, cy=120;
+  const k=R/Math.cos(Math.PI/8);
+  const pts=[...Array(8)].map((_,i)=>{const a=Math.PI/8+i*Math.PI/4;return [cx+k*Math.cos(a),cy+k*Math.sin(a)];}).map(p=>p.map(n=>n.toFixed(1)).join(",")).join(" ");
+  E("polygon",{points:pts,fill:`url(#topv-pt)`},svg);
+  E("polygon",{points:pts,fill:`url(#topv-gloss)`},svg);
+  const dm=E("g",{class:"dim"},svg);
+  E("line",{x1:cx-R,y1:cy+k+12,x2:cx+R,y2:cy+k+12},dm);
+  E("text",{x:cx,y:Math.min(236,cy+k+26),"text-anchor":"middle"},dm).textContent=v.w+" cm";
+}
+
+function summaryRows(){
+  const rows=[["Composizione",{set:"Set da due",grande:"Solo tavolino grande",piccolo:"Solo tavolino piccolo"}[st.comp]],
+    ["Marmo piano",M(st.top).name],["Marmo base",M(st.base).name]];
+  if(st.comp!=="piccolo")rows.push(["Tavolino grande",`${st.g.w} × h ${st.g.h} cm`]);
+  if(st.comp!=="grande")rows.push(["Tavolino piccolo",`${st.p.w} × h ${st.p.h} cm`]);
+  rows.push(["Finitura piano",st.fin],["Base","Taglio water-jet, bordo grezzo"]);
+  return rows;
+}
+function render(){
+  syncPressed($("sw-top"),st.top);syncPressed($("sw-base"),st.base);
+  $("sw-base").setAttribute("aria-disabled",String(st.same));
+  $("cur-top").textContent=M(st.top).name;$("cur-base").textContent=M(st.base).name+(st.same?" (uguale)":"");
+  $("cur-fin").textContent=st.fin;
+  $("cur-comp").textContent={set:"2 pezzi",grande:"1 pezzo",piccolo:"1 pezzo"}[st.comp];
+  document.querySelectorAll("#comp button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.v===st.comp)));
+  document.querySelectorAll("#fin button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.v===st.fin)));
+  $("card-grande").hidden=st.comp==="piccolo";$("card-piccolo").hidden=st.comp==="grande";
+  [["g-w","g","w"],["g-h","g","h"],["p-w","p","w"],["p-h","p","h"]].forEach(([id,t,k])=>{$(id).value=st[t][k];$("o-"+id).textContent=st[t][k]+" cm";});
+  const chips=$("chips");chips.innerHTML="";
+  [["Piano",M(st.top)],["Base",M(st.base)]].forEach(([l,m])=>{const c=document.createElement("span");c.className="chip";c.innerHTML=`<i style="background-image:url(${texture(m)})"></i>${l}: ${m.name}`;chips.appendChild(c);});
+  const sum=$("sum");sum.innerHTML="";summaryRows().forEach(([k,v])=>{const d=document.createElement("div");d.innerHTML=`<dt class="label">${k}</dt><dd>${v}</dd>`;sum.appendChild(d);});
+  $("copyfb").hidden=true;$("copy").textContent="Copia riepilogo";
+  drawFront();drawTop();
+}
+
+buildSwatches($("sw-top"),"top");buildSwatches($("sw-base"),"base");
+$("same").onchange=e=>{st.same=e.target.checked;if(st.same)st.base=st.top;render();};
+document.querySelectorAll("#comp button").forEach(b=>b.onclick=()=>{st.comp=b.dataset.v;render();});
+document.querySelectorAll("#fin button").forEach(b=>b.onclick=()=>{st.fin=b.dataset.v;render();});
+[["g-w","g","w"],["g-h","g","h"],["p-w","p","w"],["p-h","p","h"]].forEach(([id,t,k])=>{$(id).oninput=e=>{st[t][k]=+e.target.value;render();};});
+$("copy").onclick=()=>{
+  const txt="Richiesta Wabi-Sabi personalizzato (LRA.form)\n"+summaryRows().map(([k,v])=>`${k}: ${v}`).join("\n");
+  const fb=()=>{const ta=$("copyfb");ta.value=txt;ta.hidden=false;ta.focus();ta.select();$("copy").textContent="Seleziona e copia il testo";};
+  try{navigator.clipboard.writeText(txt).then(()=>{$("copy").textContent="Riepilogo copiato";},fb);}catch(e){fb();}
+};
+render();
+})();
+</script>
+
+</body>
+</html>
